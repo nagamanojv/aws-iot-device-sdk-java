@@ -147,6 +147,7 @@ public class AwsIotMqttConnection extends AwsIotConnection {
         options.setCleanSession(true);
         options.setConnectionTimeout(client.getConnectionTimeout() / 1000);
         options.setKeepAliveInterval(client.getKeepAliveInterval() / 1000);
+	options.setMaxInflight(1000);
         if(client.isClientEnableMetrics()) {
             options.setUserName(USERNAME_METRIC_STRING);
         }
